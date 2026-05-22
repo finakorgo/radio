@@ -13,23 +13,13 @@
         { country: "🎷", name: "Jazz.FM91", location: "Toronto, CA", genre: "Jazz", stream: "https://jazzfm91.streamguys1.com/jazzfm91.mp3" }, 
         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },
         //rádios Francesas        
-       { "country": "🇫🇷", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://www.magicradio.fr/player" },
-       { "country": "🇫🇷", "name": "Radio Cassette", "location": "Lyon, França", "genre": "Pop, Rock, Eletrônico (80s, 90s, 2000s)", "stream": "https://www.radiocassette.fr/" },
-       { "country": "🇫🇷", "name": "Génération Hit 80", "location": "Chambly, França", "genre": "Pop, Rock, Dance (80s, 90s, 2000s)", "stream": "https://www.generationhit80.fr/" },
+       { "country": "🇫🇷", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },
+       
        // rádios da Espanha
-        { "country": "🇪🇸", "name": "Pepe Radio", "location": "Madrid, Espanha", "genre": "Pop, Rock (80s, 90s, 2000s)", "stream": "https://hipermedia2.adswizz.com/peperadio" },
-        { "country": "🇪🇸", "name": "Todoexitos", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://todoexitos.es/player/" },
-        //rádios da Inglaterra
-        { "country": "🇬🇧", "name": "Absolute Radio 80s", "location": "Londres, Reino Unido", "genre": "Rock, Pop (80s)", "stream": "https://ais.absoluteradio.co.uk/absolute80shigh.aac" },
-        { "country": "🇬🇧", "name": "Absolute Radio 90s", "location": "Londres, Reino Unido", "genre": "Rock, Pop (90s)", "stream": "https://ais.absoluteradio.co.uk/absolute90shigh.aac" },
-        { "country": "🇬🇧", "name": "Absolute Radio 00s", "location": "Londres, Reino Unido", "genre": "Rock, Pop (2000s)", "stream": "https://ais.absoluteradio.co.uk/absolute00shigh.aac" },
-        { "country": "🇬🇧", "name": "Heart 80s", "location": "Londres, Reino Unido", "genre": "Pop (80s)", "stream": "https://heart80s-ugg0ah.c.bitgravity.com/Heart80s" },
-        { "country": "🇬🇧", "name": "Heart 90s", "location": "Londres, Reino Unido", "genre": "Pop (90s)", "stream": "https://heart90s-lz31bo-c.bitgravity.com/Heart90s" },
-        { "country": "🇬🇧", "name": "Magic at the Musicals", "location": "Londres, Reino Unido", "genre": "Pop, Soft Rock", "stream": "https://stream-mz.creativedork.com/" },
-         //rádios da Africa
-        { "country": "🇿🇦", "name": "Algoa FM", "location": "Port Elizabeth, África do Sul", "genre": "Pop, Rock (80s, 90s, 2000s)", "stream": "https://edge.iono.fm/xice/algoa.mp3" },
-        { "country": "🇿🇦", "name": "Jacaranda FM", "location": "Pretória, África do Sul", "genre": "Pop, Rock (80s, 90s, 2000s)", "stream": "https://edge.iono.fm/xice/jacaranda_89fm.mp3" },
-        { "country": "🇿🇦", "name": "East Coast Radio", "location": "Durban, África do Sul", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://edge.iono.fm/xice/ecr_high.mp3" } 
+        { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
+        { "country": "🇪🇸", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream" },
+        { "country": "🇪🇸", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream" }
+       
     ];
 
     // textos multilíngue
