@@ -58,6 +58,11 @@
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    @keyframes sound {
+      0%, 100% { height: 20%; }
+      50% { height: 100%; }
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -69,19 +74,19 @@
         <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center text-2xl">
           🌌
         </div>
-        <h1 class="title-font text-3xl font-bold tracking-tighter neon-text">AETHER</h1>
+        <h1 class="title-font text-3xl font-bold tracking-tighter neon-text">
+          AETHER
+        </h1>
       </div>
       
       <div class="flex gap-10 text-sm font-medium">
         <a href="#" class="hover:text-cyan-400 transition-colors">Descobrir</a>
         <a href="#" class="hover:text-cyan-400 transition-colors">Incubar</a>
-        <a href="#" class="hover:text-cyan-400 transition-colors">Rádio Garden</a>
         <a href="#" class="hover:text-cyan-400 transition-colors">Comunidade</a>
       </div>
 
       <div class="flex items-center gap-4">
-        <button onclick="togglePlayer()" 
-                class="px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium transition-all flex items-center gap-2">
+        <button onclick="togglePlayer()" class="px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium transition-all flex items-center gap-2">
           <i class="fa-solid fa-play"></i>
           <span>Player Global</span>
         </button>
@@ -92,14 +97,14 @@
 
   <!-- HERO -->
   <section class="hero-bg min-h-screen flex items-center pt-20">
-    <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
+    <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
       <div class="space-y-8">
         <div class="inline-flex items-center gap-3 bg-white/5 px-6 py-2 rounded-3xl text-sm border border-cyan-400/30">
           <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
           247 RÁDIOS INCUBADAS
         </div>
         
-        <h1 class="text-7xl leading-none title-font font-bold tracking-tighter neon-text">
+        <h1 class="text-6xl md:text-7xl leading-none title-font font-bold tracking-tighter neon-text">
           A FUTURA<br>INCUBADORA<br>DE RÁDIOS
         </h1>
         
@@ -109,8 +114,7 @@
         </p>
 
         <div class="flex gap-4">
-          <button onclick="exploreRadios()" 
-                  class="px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-semibold text-lg flex items-center gap-3 hover:scale-105 transition-all">
+          <button onclick="exploreRadios()" class="px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-semibold text-lg flex items-center gap-3 hover:scale-105 transition-all">
             <i class="fa-solid fa-globe"></i>
             EXPLORAR RÁDIOS
           </button>
@@ -126,13 +130,13 @@
             <img src="https://picsum.photos/60/60?random=3" class="w-8 h-8 rounded-2xl border-2 border-black object-cover">
           </div>
           <p class="text-sm text-gray-400">
-            Integrado com <span class="text-cyan-400 font-medium">Radio Garden</span>
+            Exploração <span class="text-cyan-400 font-medium">Global Sem Fronteiras</span>
           </p>
         </div>
       </div>
 
       <!-- Visual futurista -->
-      <div class="relative">
+      <div class="relative hidden md:block">
         <div class="absolute -inset-20 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 rounded-[4rem] blur-3xl"></div>
         <div class="glass rounded-3xl p-8 relative z-10 border border-cyan-400/30">
           <div class="aspect-video bg-black rounded-2xl overflow-hidden relative flex items-center justify-center">
@@ -155,17 +159,14 @@
   </section>
 
   <!-- ESTAÇÕES EM DESTAQUE -->
-  <section class="py-24 bg-black">
+  <section id="explore" class="py-24 bg-black">
     <div class="max-w-screen-2xl mx-auto px-8">
       <div class="flex items-end justify-between mb-12">
         <h2 class="text-5xl title-font font-semibold">Estrelas em Ascensão</h2>
-        <a href="#" class="text-cyan-400 flex items-center gap-2 hover:gap-3 transition-all">
-          Ver todas no Radio Garden <i class="fa-solid fa-arrow-right"></i>
-        </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="stations-grid">
-        <!-- Preenchido por JS -->
+        <!-- Estações serão renderizadas via JS -->
       </div>
     </div>
   </section>
@@ -176,91 +177,91 @@
       <div class="flex items-center gap-4 flex-1">
         <div id="now-cover" class="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl">📻</div>
         <div>
-          <p id="now-title" class="font-medium">Lofi Beats to Study To</p>
-          <p id="now-station" class="text-sm text-cyan-400">Chillhop Radio • Amsterdam</p>
+          <p id="now-title" class="font-medium">Selecione uma rádio</p>
+          <p id="now-station" class="text-sm text-cyan-400">Pronto para tocar</p>
         </div>
       </div>
 
       <div class="flex-1 flex justify-center items-center gap-6">
         <button class="text-2xl hover:text-cyan-400 transition-colors"><i class="fa-solid fa-backward-step"></i></button>
-        <button onclick="toggleAudio()" id="play-btn"
-                class="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center text-2xl hover:scale-110 transition-all">
+        <button onclick="toggleAudio()" id="play-btn" class="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center text-2xl hover:scale-110 transition-all">
           <i class="fa-solid fa-play"></i>
         </button>
         <button class="text-2xl hover:text-cyan-400 transition-colors"><i class="fa-solid fa-forward-step"></i></button>
       </div>
 
       <div class="flex-1 flex justify-end items-center gap-6">
-        <input type="range" class="w-48 accent-cyan-400" value="75">
+        <input type="range" id="volume-slider" class="w-48 accent-cyan-400" value="75" oninput="updateVolume(this.value)">
         <button onclick="togglePlayer()" class="text-gray-400 hover:text-white">
           <i class="fa-solid fa-xmark text-xl"></i>
         </button>
       </div>
     </div>
-  </div>
+  </nav>
 
   <script>
-    // Dados das estações (algumas do Radio Garden)
     const stations = [
-      {
-        name: "Chillhop Radio",
-        location: "Amsterdam, NL",
-        genre: "Lo-fi",
-        cover: "🌿",
-        stream: "https://stream.chillhop.com"
-      },
-      {
-        name: "Radio Nova",
-        location: "Paris, FR",
-        genre: "Indie / Alternative",
-        cover: "🇫🇷",
-        stream: "https://radionova.fr"
-      },
       {
         name: "Antena 1",
         location: "São Paulo, BR",
         genre: "Pop / Hits",
         cover: "🇧🇷",
-        stream: "https://antena1.com.br"
+        stream: "https://stream.antena1.com.br/stream/1/"
       },
       {
-        name: "BBC Radio 1",
-        location: "London, UK",
-        genre: "Dance / Pop",
-        cover: "🇬🇧",
-        stream: "https://bbc.co.uk/radio1"
+        name: "SomaFM Groove Salad",
+        location: "San Francisco, USA",
+        genre: "Ambient / Downtempo",
+        cover: "🥗",
+        stream: "https://ice1.somafm.com/groovesalad-128-mp3"
       },
       {
-        name: "KEXP",
-        location: "Seattle, USA",
-        genre: "Indie Rock",
-        cover: "🌲",
-        stream: "https://kexp.org"
+        name: "WFMU Freeform",
+        location: "Jersey City, USA",
+        genre: "Eclectic",
+        cover: "📻",
+        stream: "http://stream0.wfmu.org/freeform-128k.mp3"
       },
       {
-        name: "FIP",
+        name: "Radio 105",
+        location: "Milano, IT",
+        genre: "Pop / Hits",
+        cover: "🇮🇹",
+        stream: "http://icecast.unitedradio.it/Radio105.mp3"
+      },
+      {
+        name: "Radio DeeJay",
+        location: "Milano, IT",
+        genre: "Pop / Dance",
+        cover: "🕺",
+        stream: "http://mp3.kataweb.it:8000/RadioDeejay"
+      },
+      {
+        name: "Radio Capital",
+        location: "Rome, IT",
+        genre: "Classic Rock / Pop",
+        cover: "🎸",
+        stream: "http://live.mediaserver.kataweb.it/capital"
+      },
+      {
+        name: "Jazz.FM91",
+        location: "Toronto, CA",
+        genre: "Jazz",
+        cover: "🎷",
+        stream: "http://ice7.securenetsystems.net/CJRT"
+      },
+      {
+        name: "FIP Radio",
         location: "Paris, FR",
         genre: "Eclectic",
-        cover: "🎷",
-        stream: "https://fip.fr"
-      },
-      {
-        name: "Lofi Girl",
-        location: "Global",
-        genre: "Lo-fi",
-        cover: "📚",
-        stream: "https://lofigirl.com"
-      },
-      {
-        name: "Rádio Itatiaia",
-        location: "Belo Horizonte, BR",
-        genre: "Notícias / Esporte",
-        cover: "🏔️",
-        stream: "https://itatiaia.com.br"
+        cover: "🇫🇷",
+        stream: "https://stream.radiofrance.fr/fip/fip.m3u8?id=radiofrance"
       }
     ];
 
-    // Renderizar estações
+    let currentAudio = new Audio();
+    let isPlaying = false;
+
     function renderStations() {
       const grid = document.getElementById('stations-grid');
       grid.innerHTML = '';
@@ -274,82 +275,73 @@
           <p class="text-cyan-400 text-sm">${station.location}</p>
           <p class="text-xs text-gray-400 mt-1">${station.genre}</p>
           
-          <div onclick="playStation(${i}); event.stopImmediatePropagation();" 
-               class="mt-8 bg-white/10 hover:bg-cyan-400 hover:text-black transition-all text-sm py-3 px-6 rounded-2xl flex items-center justify-center gap-2">
+          <div onclick="playStation(${i}); event.stopPropagation();" class="mt-8 bg-white/10 hover:bg-cyan-400 hover:text-black transition-all text-sm py-3 px-6 rounded-2xl flex items-center justify-center gap-2">
             <i class="fa-solid fa-play"></i>
             <span>OUVIR AGORA</span>
           </div>
         `;
-        card.onclick = () => alert(`Abrindo ${station.name}... (Simulação)`);
+        card.onclick = () => playStation(i);
         grid.appendChild(card);
       });
     }
 
-    // Player
-    let audio = null;
-    let isPlaying = false;
-
     function playStation(index) {
       const station = stations[index];
+      const player = document.getElementById('global-player');
+      player.classList.remove('hidden');
       
-      if (!audio) {
-        audio = new Audio();
+      document.getElementById('now-title').innerText = station.name;
+      document.getElementById('now-station').innerText = `${station.location} • ${station.genre}`;
+      document.getElementById('now-cover').innerText = station.cover;
+
+      if (currentAudio.src !== station.stream) {
+        currentAudio.src = station.stream;
       }
       
-      // URLs fictícias (para demonstração)
-      const demoStreams = [
-        "https://stream.chillhop.com",
-        "https://icecast.radiofrance.fr/fip-midfi.mp3",
-        "https://antena1.com.br/stream",
-        "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_one.m3u8"
-      ];
-      
-      audio.src = demoStreams[index % demoStreams.length] || "https://stream.chillhop.com";
-      audio.play().catch(() => {
-        alert("Reprodução iniciada (demonstração). Em um site real usaria stream real.");
+      currentAudio.play().then(() => {
+        isPlaying = true;
+        updatePlayButton();
+      }).catch(err => {
+        console.error("Erro ao tocar:", err);
+        alert("Não foi possível carregar o áudio desta rádio.");
       });
-      
-      document.getElementById('now-title').textContent = station.name;
-      document.getElementById('now-station').textContent = `${station.genre} • ${station.location}`;
-      document.getElementById('now-cover').innerHTML = station.cover;
-      
-      togglePlayer(true);
     }
 
     function toggleAudio() {
-      if (!audio) return;
       if (isPlaying) {
-        audio.pause();
-        document.getElementById('play-btn').innerHTML = `<i class="fa-solid fa-play"></i>`;
+        currentAudio.pause();
       } else {
-        audio.play();
-        document.getElementById('play-btn').innerHTML = `<i class="fa-solid fa-pause"></i>`;
+        currentAudio.play();
       }
       isPlaying = !isPlaying;
+      updatePlayButton();
     }
 
-    function togglePlayer(show = null) {
+    function updatePlayButton() {
+      const btn = document.getElementById('play-btn');
+      btn.innerHTML = isPlaying ? '<i class="fa-solid fa-pause"></i>' : '<i class="fa-solid fa-play"></i>';
+    }
+
+    function updateVolume(val) {
+      currentAudio.volume = val / 100;
+    }
+
+    function togglePlayer() {
       const player = document.getElementById('global-player');
-      if (show === null) {
-        player.classList.toggle('hidden');
-      } else if (show) {
-        player.classList.remove('hidden');
-      } else {
-        player.classList.add('hidden');
+      player.classList.toggle('hidden');
+      if (player.classList.contains('hidden')) {
+        currentAudio.pause();
+        isPlaying = false;
+        updatePlayButton();
       }
     }
 
     function exploreRadios() {
-      document.getElementById('stations-grid').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Inicialização
-    window.onload = () => {
-      renderStations();
-      
-      // Tailwind script já carregado
-      console.log('%cAETHER Incubadora de Rádios carregada com sucesso!', 'color: #22d3ee; font-family: monospace');
-    };
+    window.onload = renderStations;
   </script>
 </body>
 </html>
+
