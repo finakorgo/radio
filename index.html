@@ -14,144 +14,154 @@
     .title-font { font-family: 'Space Grotesk', sans-serif; }
 
     .neon-text {
-      text-shadow: 0 0 15px #22d3ee, 0 0 30px #22d3ee, 0 0 50px #a855f7;
+      text-shadow: 0 0 10px #22d3ee, 0 0 20px #22d3ee, 0 0 40px #a855f7;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
     }
 
     .glass {
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    #globe-container { width: 100%; height: 100%; background: #000; }
+    #globe-container {
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
 
-  <nav class="fixed top-0 w-full z-50 glass border-b border-cyan-500/30">
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 w-full z-50 glass border-b border-cyan-500/20">
     <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-3xl flex items-center justify-center text-3xl">🌌</div>
-        <h1 class="title-font text-4xl font-bold tracking-tighter neon-text">AETHER</h1>
+        <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center text-2xl">🌌</div>
+        <h1 class="title-font text-3xl font-bold tracking-tighter neon-text">AETHER</h1>
       </div>
+      
       <div class="flex gap-10 text-sm font-medium">
-        <a href="#globe" class="text-cyan-400">Globo 3D</a>
-        <a href="#" class="hover:text-cyan-400 transition-colors">Incubar Rádio</a>
+        <a href="#" class="hover:text-cyan-400 transition-colors">Descobrir</a>
+        <a href="#" class="hover:text-cyan-400 transition-colors">Incubar</a>
+        <a href="#globe" class="hover:text-cyan-400 transition-colors">Globo 3D</a>
+        <a href="#" class="hover:text-cyan-400 transition-colors">Comunidade</a>
       </div>
+
+      <button onclick="togglePlayer()" class="px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium flex items-center gap-2">
+        <i class="fa-solid fa-play"></i> Player Global
+      </button>
     </div>
   </nav>
 
-  <section id="globe" class="min-h-screen pt-20 bg-black flex items-center">
-    <div class="max-w-screen-2xl mx-auto px-8 w-full">
-      <div class="text-center mb-10">
-        <h1 class="text-6xl title-font font-bold neon-text mb-4">EXPLORE O PLANETA PELO SOM</h1>
-        <p class="text-xl text-gray-400">Arraste para girar • Clique nos pontos • Rádios reais</p>
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
+      <div class="space-y-8">
+        <h1 class="text-7xl leading-none title-font font-bold tracking-tighter neon-text">
+          EXPLORE O MUNDO<br>PELO SOM
+        </h1>
+        <p class="text-xl text-gray-300">Gire o globo. Descubra rádios. Conecte-se ao planeta.</p>
+        <button onclick="document.getElementById('globe-section').scrollIntoView({behavior:'smooth'})" 
+                class="px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-semibold text-lg">
+          ABRIR GLOBO 3D
+        </button>
+      </div>
+      <div class="text-8xl text-center">🌍</div>
+    </div>
+  </section>
+
+  <!-- GLOBO 3D INTERATIVO -->
+  <section id="globe-section" class="py-20 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-5xl title-font font-bold mb-3">Globo AETHER 3D</h2>
+        <p class="text-gray-400">Arraste para girar • Clique nos pontos para ouvir</p>
       </div>
 
-      <div class="glass rounded-3xl overflow-hidden border border-cyan-400/30 shadow-2xl" style="height: 780px;">
+      <div class="glass rounded-3xl overflow-hidden border border-cyan-400/30" style="height: 720px;">
         <div id="globe-container"></div>
       </div>
     </div>
   </section>
 
   <!-- PLAYER -->
-  <div id="global-player" class="hidden fixed bottom-0 left-0 right-0 glass border-t border-cyan-500/30 z-50">
-    <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center gap-6">
-      <div class="flex items-center gap-5 flex-1">
-        <div id="now-cover" class="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl text-5xl flex items-center justify-center">📻</div>
+  <div id="global-player" class="hidden fixed bottom-0 left-0 right-0 bg-zinc-950 border-t border-cyan-500/30 glass z-50">
+    <div class="max-w-screen-2xl mx-auto px-8 py-4 flex items-center gap-6">
+      <div class="flex items-center gap-4 flex-1">
+        <div id="now-cover" class="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl text-4xl flex items-center justify-center">📻</div>
         <div>
-          <p id="now-title" class="text-2xl font-semibold">Carregando...</p>
-          <p id="now-station" class="text-cyan-400">—</p>
+          <p id="now-title" class="font-medium">Selecione uma rádio no globo</p>
+          <p id="now-station" class="text-sm text-cyan-400">—</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-8">
-        <button onclick="toggleAudio()" id="play-btn" 
-                class="w-20 h-20 bg-white text-black rounded-3xl flex items-center justify-center text-4xl hover:scale-110 transition-all">
+      <div class="flex-1 flex justify-center gap-8">
+        <button onclick="toggleAudio()" id="play-btn" class="w-16 h-16 bg-white text-black rounded-2xl flex items-center justify-center text-3xl hover:scale-110 transition">
           <i class="fa-solid fa-play"></i>
         </button>
       </div>
 
-      <button onclick="togglePlayer()" class="text-3xl text-gray-400 hover:text-white">✕</button>
+      <button onclick="togglePlayer()" class="text-gray-400 hover:text-white text-2xl">✕</button>
     </div>
   </div>
 
   <script>
+    // Dados das estações com coordenadas
+    const stations = [
+      { name: "Chillhop Radio", lat: 52.37, lng: 4.89, city: "Amsterdam", genre: "Lo-fi", emoji: "🌿" },
+      { name: "Radio Nova", lat: 48.86, lng: 2.35, city: "Paris", genre: "Indie", emoji: "🇫🇷" },
+      { name: "Antena 1", lat: -23.55, lng: -46.63, city: "São Paulo", genre: "Pop", emoji: "🇧🇷" },
+      { name: "Rádio Itatiaia", lat: -19.92, lng: -43.94, city: "Belo Horizonte", genre: "Notícias", emoji: "🏔️" },
+      { name: "KEXP", lat: 47.61, lng: -122.33, city: "Seattle", genre: "Indie Rock", emoji: "🌲" },
+      { name: "FIP", lat: 48.86, lng: 2.35, city: "Paris", genre: "Eclectic", emoji: "🎷" },
+      { name: "BBC Radio 1", lat: 51.51, lng: -0.13, city: "London", genre: "Dance", emoji: "🇬🇧" },
+      { name: "Lofi Girl", lat: 35.68, lng: 139.77, city: "Tokyo", genre: "Lo-fi", emoji: "📚" },
+    ];
+
     let globe;
     let currentAudio = null;
-    const CORS_PROXY = "https://corsproxy.io/?";
 
-    async function initGlobe() {
+    function initGlobe() {
       globe = Globe()(document.getElementById('globe-container'))
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
         .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
         .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-        .atmosphereColor('#22d3ee')
-        .atmosphereAltitude(0.25)
-        .pointColor(() => '#67e8f9')
+        .pointColor(() => '#22d3ee')
         .pointAltitude(0.01)
-        .pointRadius(0.13)
-        .labelsColor(() => '#a5f3fc')
-        .labelsSize(1)
-        .labelsAltitude(0.02)
+        .pointRadius(0.15)
+        .pointsTransitionDuration(1000)
         .onPointClick(d => playStation(d));
 
-      await loadStations();
+      // Adiciona os pontos
+      globe.pointsData(stations);
+
+      // Configurações extras
+      globe.width(1200);
+      globe.height(720);
+      globe.pointOfView({ altitude: 2.8 }, 2000);
     }
 
-    async function loadStations() {
-      try {
-        const res = await fetch('https://de1.api.radio-browser.info/json/stations/search?limit=150&has_geo_info=true&order=clickcount&reverse=true');
-        const data = await res.json();
+    function playStation(station) {
+      if (currentAudio) currentAudio.pause();
 
-        const stations = data
-          .filter(s => s.geo_lat && s.geo_long && s.url_resolved)
-          .slice(0, 110)
-          .map(s => ({
-            name: s.name,
-            city: s.country || s.state || s.countrycode,
-            lat: parseFloat(s.geo_lat),
-            lng: parseFloat(s.geo_long),
-            url: s.url_resolved,
-            genre: (s.tags || "").split(',').slice(0,2).join(', ') || "Música",
-            emoji: "📻"
-          }));
+      // Simulação de streams
+      const streams = {
+        "Chillhop Radio": "https://stream.chillhop.com",
+        "FIP": "https://icecast.radiofrance.fr/fip-midfi.mp3"
+      };
 
-        globe.pointsData(stations);
-        globe.labelsData(stations.map(s => ({
-          lat: s.lat,
-          lng: s.lng,
-          text: s.name.length > 22 ? s.name.substring(0,19) + "..." : s.name,
-          size: 1.1,
-          color: '#67e8f9',
-          altitude: 0.015
-        })));
+      currentAudio = new Audio(streams[station.name] || "https://stream.chillhop.com");
+      currentAudio.play().catch(() => alert("Reproduzindo (demo)"));
 
-        console.log(`✅ ${stations.length} estações carregadas`);
-      } catch (e) {
-        console.error(e);
-        alert("Erro ao carregar estações. Tente novamente.");
-      }
-    }
+      document.getElementById('now-title').textContent = station.name;
+      document.getElementById('now-station').textContent = `${station.city} • ${station.genre}`;
+      document.getElementById('now-cover').textContent = station.emoji;
 
-    async function playStation(station) {
-      if (currentAudio) {
-        currentAudio.pause();
-      }
-
-      const proxyUrl = CORS_PROXY + encodeURIComponent(station.url);
-      
-      currentAudio = new Audio(proxyUrl);
-      
-      try {
-        await currentAudio.play();
-        document.getElementById('now-title').textContent = station.name;
-        document.getElementById('now-station').textContent = `${station.city} • ${station.genre}`;
-        togglePlayer(true);
-      } catch (err) {
-        console.error(err);
-        alert(`Não foi possível reproduzir ${station.name}.\n\nTente outra estação.`);
-      }
+      togglePlayer(true);
     }
 
     function toggleAudio() {
@@ -167,11 +177,16 @@
 
     function togglePlayer(show = null) {
       const player = document.getElementById('global-player');
-      show === null ? player.classList.toggle('hidden') : 
-      show ? player.classList.remove('hidden') : player.classList.add('hidden');
+      if (show === null) player.classList.toggle('hidden');
+      else if (show) player.classList.remove('hidden');
+      else player.classList.add('hidden');
     }
 
-    window.onload = initGlobe;
+    // Inicialização
+    window.onload = () => {
+      initGlobe();
+      console.log('%cAETHER com Globo 3D carregado!', 'color:#22d3ee; font-size:14px');
+    };
   </script>
 </body>
 </html>
