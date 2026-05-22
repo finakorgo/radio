@@ -28,7 +28,6 @@
 </head>
 <body class="bg-black text-white">
 
-  <!-- NAVBAR -->
   <nav class="fixed top-0 w-full z-50 glass border-b border-cyan-500/30">
     <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -36,22 +35,17 @@
         <h1 class="title-font text-4xl font-bold tracking-tighter neon-text">AETHER</h1>
       </div>
       <div class="flex gap-10 text-sm font-medium">
-        <a href="#" class="hover:text-cyan-400 transition-colors">Descobrir</a>
         <a href="#globe" class="text-cyan-400">Globo 3D</a>
         <a href="#" class="hover:text-cyan-400 transition-colors">Incubar Rádio</a>
       </div>
-      <button onclick="togglePlayer()" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-medium flex items-center gap-2">
-        <i class="fa-solid fa-play"></i> Player Global
-      </button>
     </div>
   </nav>
 
-  <!-- GLOBO 3D -->
   <section id="globe" class="min-h-screen pt-20 bg-black flex items-center">
     <div class="max-w-screen-2xl mx-auto px-8 w-full">
       <div class="text-center mb-10">
         <h1 class="text-6xl title-font font-bold neon-text mb-4">EXPLORE O PLANETA PELO SOM</h1>
-        <p class="text-xl text-gray-400">Arraste para girar • Clique nos pontos • +30.000 rádios reais</p>
+        <p class="text-xl text-gray-400">Arraste para girar • Clique nos pontos • Rádios reais</p>
       </div>
 
       <div class="glass rounded-3xl overflow-hidden border border-cyan-400/30 shadow-2xl" style="height: 780px;">
@@ -64,15 +58,16 @@
   <div id="global-player" class="hidden fixed bottom-0 left-0 right-0 glass border-t border-cyan-500/30 z-50">
     <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center gap-6">
       <div class="flex items-center gap-5 flex-1">
-        <div id="now-cover" class="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl text-5xl flex items-center justify-center shadow-inner">📻</div>
+        <div id="now-cover" class="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl text-5xl flex items-center justify-center">📻</div>
         <div>
-          <p id="now-title" class="text-2xl font-semibold">Selecione uma estação no globo</p>
+          <p id="now-title" class="text-2xl font-semibold">Carregando...</p>
           <p id="now-station" class="text-cyan-400">—</p>
         </div>
       </div>
 
       <div class="flex items-center gap-8">
-        <button onclick="toggleAudio()" id="play-btn" class="w-20 h-20 bg-white text-black rounded-3xl flex items-center justify-center text-4xl hover:scale-110 transition-all">
+        <button onclick="toggleAudio()" id="play-btn" 
+                class="w-20 h-20 bg-white text-black rounded-3xl flex items-center justify-center text-4xl hover:scale-110 transition-all">
           <i class="fa-solid fa-play"></i>
         </button>
       </div>
@@ -84,10 +79,9 @@
   <script>
     let globe;
     let currentAudio = null;
-    let stationsData = [];
+    const CORS_PROXY = "https://corsproxy.io/?";
 
-    // Configuração do Globo com luz dia/noite
-    function initGlobe() {
+    async function initGlobe() {
       globe = Globe()(document.getElementById('globe-container'))
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
         .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
@@ -95,73 +89,69 @@
         .atmosphereColor('#22d3ee')
         .atmosphereAltitude(0.25)
         .pointColor(() => '#67e8f9')
-        .pointAltitude(0.008)
-        .pointRadius(0.12)
+        .pointAltitude(0.01)
+        .pointRadius(0.13)
         .labelsColor(() => '#a5f3fc')
-        .labelsSize(0.8)
-        .labelsAltitude(0.015)
+        .labelsSize(1)
+        .labelsAltitude(0.02)
         .onPointClick(d => playStation(d));
 
-      // Carregar estações reais da API
-      loadRealStations();
+      await loadStations();
     }
 
-    async function loadRealStations() {
+    async function loadStations() {
       try {
-        // Usando Radio Browser API - estações com coordenadas geográficas
-        const response = await fetch('https://de1.api.radio-browser.info/json/stations/search?limit=120&has_geo_info=true&order=clickcount&reverse=true');
-        const stations = await response.json();
+        const res = await fetch('https://de1.api.radio-browser.info/json/stations/search?limit=150&has_geo_info=true&order=clickcount&reverse=true');
+        const data = await res.json();
 
-        stationsData = stations
-          .filter(s => s.geo_lat && s.geo_long)
-          .slice(0, 100) // Limitamos para performance
+        const stations = data
+          .filter(s => s.geo_lat && s.geo_long && s.url_resolved)
+          .slice(0, 110)
           .map(s => ({
             name: s.name,
-            city: s.country || s.state || "Mundo",
+            city: s.country || s.state || s.countrycode,
             lat: parseFloat(s.geo_lat),
             lng: parseFloat(s.geo_long),
-            url: s.url_resolved || s.url,
-            genre: s.tags ? s.tags.split(',').slice(0,2).join(', ') : "Radio",
+            url: s.url_resolved,
+            genre: (s.tags || "").split(',').slice(0,2).join(', ') || "Música",
             emoji: "📻"
           }));
 
-        // Adiciona pontos e labels
-        globe.pointsData(stationsData);
-        globe.labelsData(stationsData.map(s => ({
+        globe.pointsData(stations);
+        globe.labelsData(stations.map(s => ({
           lat: s.lat,
           lng: s.lng,
-          text: s.name.length > 18 ? s.name.substring(0,15) + "..." : s.name,
-          size: 1.2,
-          color: '#67e8f9'
+          text: s.name.length > 22 ? s.name.substring(0,19) + "..." : s.name,
+          size: 1.1,
+          color: '#67e8f9',
+          altitude: 0.015
         })));
 
-        console.log(`✅ ${stationsData.length} estações reais carregadas!`);
+        console.log(`✅ ${stations.length} estações carregadas`);
       } catch (e) {
-        console.error("Erro ao carregar API:", e);
-        // Fallback com estações estáticas
-        loadFallbackStations();
+        console.error(e);
+        alert("Erro ao carregar estações. Tente novamente.");
       }
     }
 
-    function loadFallbackStations() {
-      // Fallback caso API falhe
-      const fallback = [ /* ... suas estações anteriores ... */ ];
-      globe.pointsData(fallback);
-    }
+    async function playStation(station) {
+      if (currentAudio) {
+        currentAudio.pause();
+      }
 
-    function playStation(station) {
-      if (currentAudio) currentAudio.pause();
-
-      currentAudio = new Audio(station.url);
-      currentAudio.play().catch(err => {
-        alert("Erro ao reproduzir: " + err.message + "\n\nURL: " + station.url);
-      });
-
-      document.getElementById('now-title').textContent = station.name;
-      document.getElementById('now-station').textContent = `${station.city} • ${station.genre}`;
-      document.getElementById('now-cover').textContent = station.emoji || "📻";
-
-      togglePlayer(true);
+      const proxyUrl = CORS_PROXY + encodeURIComponent(station.url);
+      
+      currentAudio = new Audio(proxyUrl);
+      
+      try {
+        await currentAudio.play();
+        document.getElementById('now-title').textContent = station.name;
+        document.getElementById('now-station').textContent = `${station.city} • ${station.genre}`;
+        togglePlayer(true);
+      } catch (err) {
+        console.error(err);
+        alert(`Não foi possível reproduzir ${station.name}.\n\nTente outra estação.`);
+      }
     }
 
     function toggleAudio() {
@@ -177,15 +167,11 @@
 
     function togglePlayer(show = null) {
       const player = document.getElementById('global-player');
-      if (show === null) player.classList.toggle('hidden');
-      else if (show) player.classList.remove('hidden');
-      else player.classList.add('hidden');
+      show === null ? player.classList.toggle('hidden') : 
+      show ? player.classList.remove('hidden') : player.classList.add('hidden');
     }
 
-    // Inicialização
-    window.onload = () => {
-      initGlobe();
-    };
+    window.onload = initGlobe;
   </script>
 </body>
 </html>
