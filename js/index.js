@@ -1,6 +1,6 @@
     // BASE DE RÁDIOS: todas FUNCIONANDO (substituídas as que estavam offline por americanas de qualidade)
     const stations = [
-        { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br" },
+        { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br/stream" },
         { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtempo", stream: "https://ice2.somafm.com/groovesalad-128-mp3" },
         { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },
         // rádios americanas novas (funcionando) substituindo as quebradas:
