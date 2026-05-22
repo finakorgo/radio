@@ -5,32 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AETHER • Incubadora de Rádios</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
     
-    body { font-family: 'Inter', sans-serif; }
-    .title-font { font-family: 'Space Grotesk', sans-serif; }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .title-font {
+      font-family: 'Space Grotesk', sans-serif;
+    }
 
     .neon-text {
-      text-shadow: 0 0 10px #22d3ee, 0 0 20px #22d3ee, 0 0 40px #a855f7;
+      text-shadow: 0 0 10px #22d3ee,
+                   0 0 20px #22d3ee,
+                   0 0 40px #a855f7;
     }
 
     .hero-bg {
       background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 70%);
+      animation: pulse 8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .station-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .station-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 0 40px -10px rgb(34 211 238);
     }
 
     .glass {
       background: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    #globe-container {
-      width: 100%;
-      height: 100%;
-      background: #000;
     }
   </style>
 </head>
@@ -40,20 +66,27 @@
   <nav class="fixed top-0 w-full z-50 glass border-b border-cyan-500/20">
     <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center text-2xl">🌌</div>
+        <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center text-2xl">
+          🌌
+        </div>
         <h1 class="title-font text-3xl font-bold tracking-tighter neon-text">AETHER</h1>
       </div>
       
       <div class="flex gap-10 text-sm font-medium">
         <a href="#" class="hover:text-cyan-400 transition-colors">Descobrir</a>
         <a href="#" class="hover:text-cyan-400 transition-colors">Incubar</a>
-        <a href="#globe" class="hover:text-cyan-400 transition-colors">Globo 3D</a>
+        <a href="#" class="hover:text-cyan-400 transition-colors">Rádio Garden</a>
         <a href="#" class="hover:text-cyan-400 transition-colors">Comunidade</a>
       </div>
 
-      <button onclick="togglePlayer()" class="px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium flex items-center gap-2">
-        <i class="fa-solid fa-play"></i> Player Global
-      </button>
+      <div class="flex items-center gap-4">
+        <button onclick="togglePlayer()" 
+                class="px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-3xl text-sm font-medium transition-all flex items-center gap-2">
+          <i class="fa-solid fa-play"></i>
+          <span>Player Global</span>
+        </button>
+        <div class="w-9 h-9 bg-purple-600 rounded-2xl"></div>
+      </div>
     </div>
   </nav>
 
@@ -61,131 +94,261 @@
   <section class="hero-bg min-h-screen flex items-center pt-20">
     <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
       <div class="space-y-8">
+        <div class="inline-flex items-center gap-3 bg-white/5 px-6 py-2 rounded-3xl text-sm border border-cyan-400/30">
+          <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          247 RÁDIOS INCUBADAS
+        </div>
+        
         <h1 class="text-7xl leading-none title-font font-bold tracking-tighter neon-text">
-          EXPLORE O MUNDO<br>PELO SOM
+          A FUTURA<br>INCUBADORA<br>DE RÁDIOS
         </h1>
-        <p class="text-xl text-gray-300">Gire o globo. Descubra rádios. Conecte-se ao planeta.</p>
-        <button onclick="document.getElementById('globe-section').scrollIntoView({behavior:'smooth'})" 
-                class="px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-semibold text-lg">
-          ABRIR GLOBO 3D
-        </button>
-      </div>
-      <div class="text-8xl text-center">🌍</div>
-    </div>
-  </section>
+        
+        <p class="text-xl text-gray-300 max-w-lg">
+          Plataforma futurista que conecta o mundo através do som. 
+          Incubamos estações independentes com tecnologia de ponta.
+        </p>
 
-  <!-- GLOBO 3D INTERATIVO -->
-  <section id="globe-section" class="py-20 bg-black">
-    <div class="max-w-screen-2xl mx-auto px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-5xl title-font font-bold mb-3">Globo AETHER 3D</h2>
-        <p class="text-gray-400">Arraste para girar • Clique nos pontos para ouvir</p>
-      </div>
+        <div class="flex gap-4">
+          <button onclick="exploreRadios()" 
+                  class="px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-semibold text-lg flex items-center gap-3 hover:scale-105 transition-all">
+            <i class="fa-solid fa-globe"></i>
+            EXPLORAR RÁDIOS
+          </button>
+          <button class="px-8 py-5 border border-white/30 hover:border-white/60 rounded-3xl font-medium transition-all">
+            Incubar minha rádio
+          </button>
+        </div>
 
-      <div class="glass rounded-3xl overflow-hidden border border-cyan-400/30" style="height: 720px;">
-        <div id="globe-container"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLAYER -->
-  <div id="global-player" class="hidden fixed bottom-0 left-0 right-0 bg-zinc-950 border-t border-cyan-500/30 glass z-50">
-    <div class="max-w-screen-2xl mx-auto px-8 py-4 flex items-center gap-6">
-      <div class="flex items-center gap-4 flex-1">
-        <div id="now-cover" class="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl text-4xl flex items-center justify-center">📻</div>
-        <div>
-          <p id="now-title" class="font-medium">Selecione uma rádio no globo</p>
-          <p id="now-station" class="text-sm text-cyan-400">—</p>
+        <div class="flex items-center gap-8 pt-6">
+          <div class="flex -space-x-6">
+            <img src="https://picsum.photos/60/60?random=1" class="w-8 h-8 rounded-2xl border-2 border-black object-cover">
+            <img src="https://picsum.photos/60/60?random=2" class="w-8 h-8 rounded-2xl border-2 border-black object-cover">
+            <img src="https://picsum.photos/60/60?random=3" class="w-8 h-8 rounded-2xl border-2 border-black object-cover">
+          </div>
+          <p class="text-sm text-gray-400">
+            Integrado com <span class="text-cyan-400 font-medium">Radio Garden</span>
+          </p>
         </div>
       </div>
 
-      <div class="flex-1 flex justify-center gap-8">
-        <button onclick="toggleAudio()" id="play-btn" class="w-16 h-16 bg-white text-black rounded-2xl flex items-center justify-center text-3xl hover:scale-110 transition">
-          <i class="fa-solid fa-play"></i>
-        </button>
+      <!-- Visual futurista -->
+      <div class="relative">
+        <div class="absolute -inset-20 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 rounded-[4rem] blur-3xl"></div>
+        <div class="glass rounded-3xl p-8 relative z-10 border border-cyan-400/30">
+          <div class="aspect-video bg-black rounded-2xl overflow-hidden relative flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-8xl mb-4 animate-pulse">🌍</div>
+              <p class="text-cyan-400 font-mono text-sm tracking-widest">LIVE FROM EARTH • 2026</p>
+            </div>
+            
+            <!-- Simulação de ondas sonoras -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-1">
+              <div class="w-2 h-10 bg-cyan-400 rounded-full animate-[sound_1.2s_infinite]"></div>
+              <div class="w-2 h-16 bg-purple-500 rounded-full animate-[sound_0.8s_infinite]"></div>
+              <div class="w-2 h-8 bg-cyan-400 rounded-full animate-[sound_1.5s_infinite]"></div>
+              <div class="w-2 h-14 bg-purple-500 rounded-full animate-[sound_0.9s_infinite]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTAÇÕES EM DESTAQUE -->
+  <section class="py-24 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="flex items-end justify-between mb-12">
+        <h2 class="text-5xl title-font font-semibold">Estrelas em Ascensão</h2>
+        <a href="#" class="text-cyan-400 flex items-center gap-2 hover:gap-3 transition-all">
+          Ver todas no Radio Garden <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
 
-      <button onclick="togglePlayer()" class="text-gray-400 hover:text-white text-2xl">✕</button>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="stations-grid">
+        <!-- Preenchido por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYER GLOBAL -->
+  <div id="global-player" class="hidden fixed bottom-0 left-0 right-0 bg-zinc-950 border-t border-cyan-500/30 glass z-50">
+    <div class="max-w-screen-2xl mx-auto px-8 py-4 flex items-center gap-6">
+      <div class="flex items-center gap-4 flex-1">
+        <div id="now-cover" class="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl">📻</div>
+        <div>
+          <p id="now-title" class="font-medium">Lofi Beats to Study To</p>
+          <p id="now-station" class="text-sm text-cyan-400">Chillhop Radio • Amsterdam</p>
+        </div>
+      </div>
+
+      <div class="flex-1 flex justify-center items-center gap-6">
+        <button class="text-2xl hover:text-cyan-400 transition-colors"><i class="fa-solid fa-backward-step"></i></button>
+        <button onclick="toggleAudio()" id="play-btn"
+                class="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center text-2xl hover:scale-110 transition-all">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="text-2xl hover:text-cyan-400 transition-colors"><i class="fa-solid fa-forward-step"></i></button>
+      </div>
+
+      <div class="flex-1 flex justify-end items-center gap-6">
+        <input type="range" class="w-48 accent-cyan-400" value="75">
+        <button onclick="togglePlayer()" class="text-gray-400 hover:text-white">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
     </div>
   </div>
 
   <script>
-    // Dados das estações com coordenadas
+    // Dados das estações (algumas do Radio Garden)
     const stations = [
-      { name: "Chillhop Radio", lat: 52.37, lng: 4.89, city: "Amsterdam", genre: "Lo-fi", emoji: "🌿" },
-      { name: "Radio Nova", lat: 48.86, lng: 2.35, city: "Paris", genre: "Indie", emoji: "🇫🇷" },
-      { name: "Antena 1", lat: -23.55, lng: -46.63, city: "São Paulo", genre: "Pop", emoji: "🇧🇷" },
-      { name: "Rádio Itatiaia", lat: -19.92, lng: -43.94, city: "Belo Horizonte", genre: "Notícias", emoji: "🏔️" },
-      { name: "KEXP", lat: 47.61, lng: -122.33, city: "Seattle", genre: "Indie Rock", emoji: "🌲" },
-      { name: "FIP", lat: 48.86, lng: 2.35, city: "Paris", genre: "Eclectic", emoji: "🎷" },
-      { name: "BBC Radio 1", lat: 51.51, lng: -0.13, city: "London", genre: "Dance", emoji: "🇬🇧" },
-      { name: "Lofi Girl", lat: 35.68, lng: 139.77, city: "Tokyo", genre: "Lo-fi", emoji: "📚" },
+      {
+        name: "Chillhop Radio",
+        location: "Amsterdam, NL",
+        genre: "Lo-fi",
+        cover: "🌿",
+        stream: "https://stream.chillhop.com"
+      },
+      {
+        name: "Radio Nova",
+        location: "Paris, FR",
+        genre: "Indie / Alternative",
+        cover: "🇫🇷",
+        stream: "https://radionova.fr"
+      },
+      {
+        name: "Antena 1",
+        location: "São Paulo, BR",
+        genre: "Pop / Hits",
+        cover: "🇧🇷",
+        stream: "https://antena1.com.br"
+      },
+      {
+        name: "BBC Radio 1",
+        location: "London, UK",
+        genre: "Dance / Pop",
+        cover: "🇬🇧",
+        stream: "https://bbc.co.uk/radio1"
+      },
+      {
+        name: "KEXP",
+        location: "Seattle, USA",
+        genre: "Indie Rock",
+        cover: "🌲",
+        stream: "https://kexp.org"
+      },
+      {
+        name: "FIP",
+        location: "Paris, FR",
+        genre: "Eclectic",
+        cover: "🎷",
+        stream: "https://fip.fr"
+      },
+      {
+        name: "Lofi Girl",
+        location: "Global",
+        genre: "Lo-fi",
+        cover: "📚",
+        stream: "https://lofigirl.com"
+      },
+      {
+        name: "Rádio Itatiaia",
+        location: "Belo Horizonte, BR",
+        genre: "Notícias / Esporte",
+        cover: "🏔️",
+        stream: "https://itatiaia.com.br"
+      }
     ];
 
-    let globe;
-    let currentAudio = null;
+    // Renderizar estações
+    function renderStations() {
+      const grid = document.getElementById('stations-grid');
+      grid.innerHTML = '';
 
-    function initGlobe() {
-      globe = Globe()(document.getElementById('globe-container'))
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-        .pointColor(() => '#22d3ee')
-        .pointAltitude(0.01)
-        .pointRadius(0.15)
-        .pointsTransitionDuration(1000)
-        .onPointClick(d => playStation(d));
-
-      // Adiciona os pontos
-      globe.pointsData(stations);
-
-      // Configurações extras
-      globe.width(1200);
-      globe.height(720);
-      globe.pointOfView({ altitude: 2.8 }, 2000);
+      stations.forEach((station, i) => {
+        const card = document.createElement('div');
+        card.className = `station-card glass rounded-3xl p-6 cursor-pointer group`;
+        card.innerHTML = `
+          <div class="text-6xl mb-6 transition-transform group-hover:scale-110">${station.cover}</div>
+          <h3 class="text-2xl font-semibold mb-1">${station.name}</h3>
+          <p class="text-cyan-400 text-sm">${station.location}</p>
+          <p class="text-xs text-gray-400 mt-1">${station.genre}</p>
+          
+          <div onclick="playStation(${i}); event.stopImmediatePropagation();" 
+               class="mt-8 bg-white/10 hover:bg-cyan-400 hover:text-black transition-all text-sm py-3 px-6 rounded-2xl flex items-center justify-center gap-2">
+            <i class="fa-solid fa-play"></i>
+            <span>OUVIR AGORA</span>
+          </div>
+        `;
+        card.onclick = () => alert(`Abrindo ${station.name}... (Simulação)`);
+        grid.appendChild(card);
+      });
     }
 
-    function playStation(station) {
-      if (currentAudio) currentAudio.pause();
+    // Player
+    let audio = null;
+    let isPlaying = false;
 
-      // Simulação de streams
-      const streams = {
-        "Chillhop Radio": "https://stream.chillhop.com",
-        "FIP": "https://icecast.radiofrance.fr/fip-midfi.mp3"
-      };
-
-      currentAudio = new Audio(streams[station.name] || "https://stream.chillhop.com");
-      currentAudio.play().catch(() => alert("Reproduzindo (demo)"));
-
+    function playStation(index) {
+      const station = stations[index];
+      
+      if (!audio) {
+        audio = new Audio();
+      }
+      
+      // URLs fictícias (para demonstração)
+      const demoStreams = [
+        "https://stream.chillhop.com",
+        "https://icecast.radiofrance.fr/fip-midfi.mp3",
+        "https://antena1.com.br/stream",
+        "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_one.m3u8"
+      ];
+      
+      audio.src = demoStreams[index % demoStreams.length] || "https://stream.chillhop.com";
+      audio.play().catch(() => {
+        alert("Reprodução iniciada (demonstração). Em um site real usaria stream real.");
+      });
+      
       document.getElementById('now-title').textContent = station.name;
-      document.getElementById('now-station').textContent = `${station.city} • ${station.genre}`;
-      document.getElementById('now-cover').textContent = station.emoji;
-
+      document.getElementById('now-station').textContent = `${station.genre} • ${station.location}`;
+      document.getElementById('now-cover').innerHTML = station.cover;
+      
       togglePlayer(true);
     }
 
     function toggleAudio() {
-      if (!currentAudio) return;
-      if (currentAudio.paused) {
-        currentAudio.play();
-        document.getElementById('play-btn').innerHTML = `<i class="fa-solid fa-pause"></i>`;
-      } else {
-        currentAudio.pause();
+      if (!audio) return;
+      if (isPlaying) {
+        audio.pause();
         document.getElementById('play-btn').innerHTML = `<i class="fa-solid fa-play"></i>`;
+      } else {
+        audio.play();
+        document.getElementById('play-btn').innerHTML = `<i class="fa-solid fa-pause"></i>`;
       }
+      isPlaying = !isPlaying;
     }
 
     function togglePlayer(show = null) {
       const player = document.getElementById('global-player');
-      if (show === null) player.classList.toggle('hidden');
-      else if (show) player.classList.remove('hidden');
-      else player.classList.add('hidden');
+      if (show === null) {
+        player.classList.toggle('hidden');
+      } else if (show) {
+        player.classList.remove('hidden');
+      } else {
+        player.classList.add('hidden');
+      }
+    }
+
+    function exploreRadios() {
+      document.getElementById('stations-grid').scrollIntoView({ behavior: 'smooth' });
     }
 
     // Inicialização
     window.onload = () => {
-      initGlobe();
-      console.log('%cAETHER com Globo 3D carregado!', 'color:#22d3ee; font-size:14px');
+      renderStations();
+      
+      // Tailwind script já carregado
+      console.log('%cAETHER Incubadora de Rádios carregada com sucesso!', 'color: #22d3ee; font-family: monospace');
     };
   </script>
 </body>
