@@ -34,7 +34,7 @@
             selectRadio: "📻 Selecione uma rádio",
             ready: "⚡ Pronto para tocar",
             playing: "🎵 Tocando agora:",
-            final: "frequencias do amanhã"
+            final: "🌌 AETHER — frequências do amanhã."
         },
         en: {
             badge: "✨ 12 INCUBATED RADIOS",
@@ -46,7 +46,7 @@
             selectRadio: "📻 Select a radio",
             ready: "⚡ Ready to play",
             playing: "🎵 Now playing:",
-            final:  "frequencies of tomorrow"
+            final:  "🌌 AETHER — frequencies of tomorrow."
         }
     };
 
