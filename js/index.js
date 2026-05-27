@@ -26,7 +26,7 @@
     const translations = {
         pt: {
             badge: "✨12 RÁDIOS INCUBADAS",
-            one: "A Futura<br>Incubadora de Rádios",
+            one: "A FUTURA<br>INCUBADORA DE RADIOS",
             subtitle: "Plataforma futurista que conecta o mundo através do som. Incubamos estações independentes com tecnologia de ponta.",
             explore: "🌍 Exploração Global Sem Fronteiras",
             sectionTitle: "⭐ Estrelas em Ascensão",
@@ -37,7 +37,7 @@
         },
         en: {
             badge: "✨ 12 INCUBATED RADIOS",
-            one: "The Future<br>Radio Incubator",
+            one: "THE FUTURE<br>RADIO INCUBATOR",
             subtitle: "A futuristic platform that connects the world through sound. We incubate independent stations with cutting-edge technology.",
             explore: "🌍 Global Exploration Without Borders",
             sectionTitle: "⭐ Rising Stars",
