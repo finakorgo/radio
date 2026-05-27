@@ -33,7 +33,8 @@
             play: "OUVIR AGORA",
             selectRadio: "📻 Selecione uma rádio",
             ready: "⚡ Pronto para tocar",
-            playing: "🎵 Tocando agora:"
+            playing: "🎵 Tocando agora:",
+            final: "frequencias do amanhã"
         },
         en: {
             badge: "✨ 12 INCUBATED RADIOS",
@@ -44,7 +45,8 @@
             play: "PLAY NOW",
             selectRadio: "📻 Select a radio",
             ready: "⚡ Ready to play",
-            playing: "🎵 Now playing:"
+            playing: "🎵 Now playing:",
+            final:  "frequencies of tomorrow"
         }
     };
 
@@ -57,6 +59,7 @@
         document.querySelector('[data-key="subtitle"]').innerText = t.subtitle;
         document.querySelector('[data-key="explore"]').innerText = t.explore;
         document.querySelector('[data-key="sectionTitle"]').innerHTML = t.sectionTitle;
+        document.querySelector('[data-key="final"]').innerHTML = t.final;
         // atualizar textos dos botões e player, sem recriar grid
         const btns = document.querySelectorAll('.play-btn');
         btns.forEach((btn, idx) => {
