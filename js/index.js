@@ -53,6 +53,7 @@
     function updateLanguage() {
         const t = translations[currentLang];
         document.querySelector('[data-key="badge"]').innerText = t.badge;
+        document.querySelector('[data-key="one"]').innerText = t.one;
         document.querySelector('[data-key="subtitle"]').innerText = t.subtitle;
         document.querySelector('[data-key="explore"]').innerText = t.explore;
         document.querySelector('[data-key="sectionTitle"]').innerHTML = t.sectionTitle;
