@@ -9,7 +9,7 @@
         { country: "🇺🇸", name: "WBGO Jazz", location: "Newark, USA", genre: "Jazz", stream: "https://wbgo.streamguys1.com/wbgo128" },
         { country: "🇺🇸", name: "KCMP (The Current)", location: "Minneapolis, USA", genre: "Indie Rock", stream: "https://current.stream.publicradio.org/kcmp.mp3" },
         { country: "🇺🇸", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
-        { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://us7.maindigitalstream.com/2569/" }, // atualizado com stream funcional
+        { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
         { country: "🎷", name: "Jazz.FM91", location: "Toronto, CA", genre: "Jazz", stream: "https://jazzfm91.streamguys1.com/jazzfm91.mp3" }, 
         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },
         //rádios Francesas        
