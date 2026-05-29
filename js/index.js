@@ -10,7 +10,7 @@
         { country: "🇺🇸", name: "KCMP (The Current)", location: "Minneapolis, USA", genre: "Indie Rock", stream: "https://current.stream.publicradio.org/kcmp.mp3" },
         { country: "🇺🇸", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
         { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
-        { country: "🎷", name: "Jazz.FM91", location: "Toronto, CA", genre: "Jazz", stream: "https://jazzfm91.streamguys1.com/jazzfm91.mp3" }, 
+        { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a" }, 
         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },
         //rádios Francesas        
        { "country": "🇫🇷", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },
