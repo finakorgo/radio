@@ -52,10 +52,9 @@
 
     let currentLang = 'pt';
 
-    function updateLanguage() {
+   /* function updateLanguage() {
         const t = translations[currentLang];
-        //document.querySelector('[data-key="badge"]').innerText = t.badge;
-        document.querySelector('[data-key="badge"]')?.innerText = t.badge;
+        //document.querySelector('[data-key="badge"]').innerText = t.badge;      
         document.querySelector('[data-key="one"]').innerText = t.one;
         document.querySelector('[data-key="subtitle"]').innerText = t.subtitle;
         document.querySelector('[data-key="explore"]').innerText = t.explore;
@@ -67,7 +66,39 @@
             if (stations[idx]) {
                 btn.innerText = t.play;
             }
-        });
+        });*/
+
+
+    function updateLanguage() {
+    const t = translations[currentLang];
+    
+    // Verificar se elemento existe antes de atualizar
+    const badge = document.querySelector('[data-key="badge"]');
+    if (badge) badge.innerText = t.badge;
+    
+    const one = document.querySelector('[data-key="one"]');
+    if (one) one.innerText = t.one;
+    
+    const subtitle = document.querySelector('[data-key="subtitle"]');
+    if (subtitle) subtitle.innerText = t.subtitle;
+    
+    const explore = document.querySelector('[data-key="explore"]');
+    if (explore) explore.innerText = t.explore;
+    
+    const sectionTitle = document.querySelector('[data-key="sectionTitle"]');
+    if (sectionTitle) sectionTitle.innerHTML = t.sectionTitle;
+    
+    const final = document.querySelector('[data-key="final"]');
+    if (final) final.innerHTML = t.final;
+    
+    // Agora os botões serão atualizados mesmo se elementos data-key faltarem
+    const btns = document.querySelectorAll('.play-btn');
+    btns.forEach((btn, idx) => {
+        if (stations[idx]) {
+            btn.innerText = t.play;
+        }
+    });
+//==^.^==
         const nowDiv = document.getElementById('nowPlayingText');
         if (nowDiv && !nowDiv.innerText.includes(':') && !nowDiv.innerText.includes('🎵')) {
             // preserva o nome da rádio se já estiver tocando
