@@ -5,7 +5,7 @@
         { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },
         // rádios americanas novas (funcionando) substituindo as quebradas:
         { country: "🇺🇸", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
-        { country: "🇺🇸", name: "KNKX Public Radio", location: "Tacoma, USA", genre: "Jazz / Blues", stream: "https://live.str3am.com:2199/knkx" },
+        { country: "🇺🇸", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },
         { country: "🇺🇸", name: "WBGO Jazz", location: "Newark, USA", genre: "Jazz", stream: "https://wbgo.streamguys1.com/wbgo128" },
         { country: "🇺🇸", name: "KCMP (The Current)", location: "Minneapolis, USA", genre: "Indie Rock", stream: "https://current.stream.publicradio.org/kcmp.mp3" },
         { country: "🇺🇸", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
