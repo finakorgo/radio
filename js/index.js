@@ -4,11 +4,11 @@
         { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtempo", stream: "https://ice2.somafm.com/groovesalad-128-mp3" },
         { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },
         // rádios americanas novas (funcionando) substituindo as quebradas:
-        { country: "🇺🇸", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
-        { country: "🇺🇸", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },
-        { country: "🇺🇸", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
-        { country: "🇺🇸", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3" },
-        { country: "🇺🇸", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
+        { country: "US", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
+        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },
+        { country: "PT", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
+        { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3" },
+        { country: "US", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
         { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
         { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a" }, 
         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },
@@ -17,8 +17,8 @@
        
        // rádios da Espanha
         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
-        { "country": "🇪🇸", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream" },
-        { "country": "🇪🇸", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream" }
+        { "country": "ES", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream" },
+        { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream" }
        
     ];
 
