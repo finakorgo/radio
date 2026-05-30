@@ -13,7 +13,7 @@
         { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a" }, 
         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },
         //rádios Francesas        
-       { "country": "🇫🇷", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },
+       { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },
        
        // rádios da Espanha
         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
