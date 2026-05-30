@@ -6,7 +6,7 @@
         // rádios americanas novas (funcionando) substituindo as quebradas:
         { country: "🇺🇸", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
         { country: "🇺🇸", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },
-        { country: "🇺🇸", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://www.digitalrm.pt/streaming/rpsoure/play.html" },
+        { country: "🇺🇸", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
         { country: "🇺🇸", name: "KCMP (The Current)", location: "Minneapolis, USA", genre: "Indie Rock", stream: "https://current.stream.publicradio.org/kcmp.mp3" },
         { country: "🇺🇸", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
         { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
