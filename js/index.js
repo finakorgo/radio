@@ -13,7 +13,7 @@
         { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br/stream" },
         
         //rádios Francesas        
-        { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },  
+        { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", stream: "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },  
         
         // rádios da Espanha
          { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
@@ -24,7 +24,7 @@
          { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },     
         
         //rádios de Portugal 
-         { country: "PT", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
+         { country: "PT", name: "RPS Rádio ", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
          { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3" },
          { country: "PT", name: "Cávado", location: "Barcelos, Portugal", genre: "Variadas", stream: "https://stream.azfm.com/radiocavado" },  
          { country: "PT", name: "Alto Minho", location: " Viana do Castelo, Portugal", genre: "Variadas", stream: "https://ec2.yesstreaming.net:3705/stream" }
