@@ -25,7 +25,7 @@
         
         //rádios de Portugal 
          { country: "PT", name: "RPS Rádio ", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream", website: "https://radiosoure.pt/" },
-         { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3", website: "" },
+         { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3", website: "https://xradio.pt" },
          { country: "PT", name: "Cávado", location: "Barcelos, Portugal", genre: "Variadas", stream: "https://stream.azfm.com/radiocavado", website: "https://radiocavado.pt/" },  
          { country: "PT", name: "Alto Minho", location: " Viana do Castelo, Portugal", genre: "Variadas", stream: "https://ec2.yesstreaming.net:3705/stream", website: "https://radioaltominho.pt/" }
        
