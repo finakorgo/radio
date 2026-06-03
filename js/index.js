@@ -5,27 +5,33 @@
         { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },
         // rádios americanas novas (funcionando) substituindo as quebradas:
         { country: "US", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
-        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },
-        { country: "PT", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
-        { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3" },
+        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },       
         { country: "US", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
         { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
         { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a" }, 
-        { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },
+        
         //rádios Francesas        
-       { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },
-       
-       // rádios da Espanha
-        { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
-        { "country": "ES", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream" },
-        { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream" }
+        { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },  
+        
+        // rádios da Espanha
+         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
+         { "country": "ES", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream" },
+         { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream" },
+        
+        //rádios da Itália
+         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },     
+        
+        //rádios de Portugal 
+         { country: "PT", name: "RPS Rádio Popular de Source", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
+         { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3" },
+         { country: "PT", name: "Cávado", location: "Barcelos, Portugal", genre: "Variadas", stream: "https://stream.azfm.com/radiocavado" }   
        
     ];
 
     // textos multilíngue
     const translations = {
         pt: {
-            badge: "✨15 RÁDIOS INCUBADAS",
+            badge: "✨16 RÁDIOS INCUBADAS",
             one: "A FUTURA INCUBADORA DE RADIOS",
             subtitle: "Plataforma futurista que conecta o mundo através do som. Incubamos estações independentes com tecnologia de ponta.",
             explore: "🌍 Exploração Global Sem Fronteiras",
@@ -37,7 +43,7 @@
             final: "🌌 AETHER &hearts; frequências do amanhã."
         },
         en: {
-            badge: "✨ 15 INCUBATED RADIOS",
+            badge: "✨ 16 INCUBATED RADIOS",
             one: "THE FUTURE RADIO INCUBATOR",
             subtitle: "A futuristic platform that connects the world through sound. We incubate independent stations with cutting-edge technology.",
             explore: "🌍 Global Exploration Without Borders",
