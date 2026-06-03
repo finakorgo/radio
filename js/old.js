@@ -206,4 +206,4 @@
 
     // inicialização
     renderStations();
-    updateLanguage();
+    updateLanguage();;
