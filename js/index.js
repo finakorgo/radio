@@ -1,33 +1,33 @@
-    // BASE DE RÁDIOS: todas FUNCIONANDO (substituídas as que estavam offline por americanas de qualidade)
+// BASE DE RÁDIOS: todas FUNCIONANDO (substituídas as que estavam offline por americanas de qualidade)
     const stations = [
        // rádios americanas novas (funcionando) substituindo as quebradas:
-        { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtempo", stream: "https://ice2.somafm.com/groovesalad-128-mp3" },
-        { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },        
-        { country: "US", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
-        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, USA", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },       
-        { country: "US", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
-        { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
-        { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a" }, 
+        { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtempo", stream: "https://ice2.somafm.com/groovesalad-128-mp3", website: "https://somafm.com/groovesalad/" },
+        { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k", website: "https://wfmu.org/" },        
+        { country: "US", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3", website: "https://www.kexp.org/" },
+        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, USA", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv", website: "" },
+        { country: "US", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3", website: "https://www.wwoz.org/" },
+        { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841", website: "https://www.rockawayradio.com/" },
+        { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a", website: "http://wtcs.rocks/" }, 
         
         //rádios do Brasil
-        { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br/stream" },
+        { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br/stream", website: "https://www.antena1.com.br/" },
         
         //rádios Francesas        
-        { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", stream: "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },  
+        { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", stream: "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3", website: "https://www.magic.co.uk/" },  
         
         // rádios da Espanha
-         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream" },
-         { "country": "ES", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream" },
-         { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream" },
+         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream", website: "" },
+         { "country": "ES", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream", website: "" },
+         { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream", website: "" },
         
         //rádios da Itália
-         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3" },     
+         { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3", website: "https://www.105.net/" },     
         
         //rádios de Portugal 
-         { country: "PT", name: "RPS Rádio ", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream" },
-         { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3" },
-         { country: "PT", name: "Cávado", location: "Barcelos, Portugal", genre: "Variadas", stream: "https://stream.azfm.com/radiocavado" },  
-         { country: "PT", name: "Alto Minho", location: " Viana do Castelo, Portugal", genre: "Variadas", stream: "https://ec2.yesstreaming.net:3705/stream" }
+         { country: "PT", name: "RPS Rádio ", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream", website: "https://radiosoure.pt/" },
+         { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3", website: "" },
+         { country: "PT", name: "Cávado", location: "Barcelos, Portugal", genre: "Variadas", stream: "https://stream.azfm.com/radiocavado", website: "https://radiocavado.pt/" },  
+         { country: "PT", name: "Alto Minho", location: " Viana do Castelo, Portugal", genre: "Variadas", stream: "https://ec2.yesstreaming.net:3705/stream", website: "https://radioaltominho.pt/" }
        
     ];
 
@@ -40,6 +40,7 @@
             explore: "🌍 Exploração Global Sem Fronteiras",
             sectionTitle: "⭐ Estrelas em Ascensão",
             play: "OUVIR AGORA",
+            officialSite: "SITE OFICIAL",
             selectRadio: "📻 Selecione uma rádio",
             ready: "⚡ Pronto para tocar",
             playing: "🎵 Tocando agora:",
@@ -52,6 +53,7 @@
             explore: "🌍 Global Exploration Without Borders",
             sectionTitle: "⭐ Rising Stars",
             play: "PLAY NOW",
+            officialSite: "OFFICIAL WEBSITE",
             selectRadio: "📻 Select a radio",
             ready: "⚡ Ready to play",
             playing: "🎵 Now playing:",
@@ -107,6 +109,14 @@
             btn.innerText = t.play;
         }
     });
+    
+    // Atualizar textos dos botões de site oficial
+    const siteBtns = document.querySelectorAll('.site-btn');
+    siteBtns.forEach((btn, idx) => {
+        if (stations[idx]) {
+            btn.innerText = t.officialSite;
+        }
+    });
 //==^.^==
         const nowDiv = document.getElementById('nowPlayingText');
         if (nowDiv && !nowDiv.innerText.includes(':') && !nowDiv.innerText.includes('🎵')) {
@@ -138,12 +148,20 @@
         stations.forEach((station, index) => {
             const card = document.createElement('div');
             card.className = 'radio-card';
+            
+            // Criar botão de site oficial apenas se houver URL
+            let siteButton = '';
+            if (station.website && station.website.trim() !== '') {
+                siteButton = `<a href="${station.website}" target="_blank" class="site-btn" data-index="${index}">${t.officialSite}</a>`;
+            }
+            
             card.innerHTML = `
                 <div class="country">${station.country}</div>
                 <div class="radio-name">${station.name}</div>
                 <div class="location">${station.location}</div>
                 <div class="genre">${station.genre}</div>
                 <button class="play-btn" data-index="${index}">${t.play}</button>
+                ${siteButton}
             `;
             grid.appendChild(card);
         });
@@ -191,6 +209,13 @@
         btns.forEach((btnEl, idx) => {
             if (stations[idx]) btnEl.innerText = t.play;
         });
+        
+        // Atualizar textos dos botões de site oficial
+        const siteBtns = document.querySelectorAll('.site-btn');
+        siteBtns.forEach((btnEl, idx) => {
+            if (stations[idx]) btnEl.innerText = t.officialSite;
+        });
+        
         const nowDiv = document.getElementById('nowPlayingText');
         const statusDiv = document.getElementById('playerStatus');
         if (nowDiv.innerText.includes('Selecione') || nowDiv.innerText.includes('Select')) {
