@@ -23,7 +23,7 @@
         
         //rádios da Itália
          { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3", website: "https://www.105.net/" },     
-        
+         { country: "IT", name: "Diffusione", location: "Follonica, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "https://antares.dribbcast.com/proxy/diffusionefollonica/stream.mp3", website: "https://www.radiodiffusionefollonica.it" },
         //rádios de Portugal 
          { country: "PT", name: "RPS Rádio ", location: "Soure,Portugal", genre: "Pop / Rock", stream: "https://nl.digitalrm.pt:8072/stream", website: "https://radiosoure.pt/" },
          { country: "PT", name: "Xradio", location: "Matosinhos, Portugal", genre: "Indie Rock", stream: "https://radio.xradio.pt/listen/xradio/radio.mp3", website: "https://xradio.pt" },
