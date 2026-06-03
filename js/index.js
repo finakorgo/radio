@@ -1,14 +1,16 @@
     // BASE DE RÁDIOS: todas FUNCIONANDO (substituídas as que estavam offline por americanas de qualidade)
     const stations = [
-        { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br/stream" },
+       // rádios americanas novas (funcionando) substituindo as quebradas:
         { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtempo", stream: "https://ice2.somafm.com/groovesalad-128-mp3" },
-        { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },
-        // rádios americanas novas (funcionando) substituindo as quebradas:
+        { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k" },        
         { country: "US", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3" },
-        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, Missouri", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },       
+        { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, USA", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv" },       
         { country: "US", name: "WWOZ New Orleans", location: "New Orleans, USA", genre: "Soul / Jazz / Blues", stream: "https://wwoz-sc.streamguys1.com/wwoz-hi.mp3" },
         { country: "US", name: "Rockway Radio", location: "Laurelville, US", genre: "Rock", stream: "https://streaming.live365.com/a03841" }, // atualizado com stream funcional
         { country: "🎷", name: "WTCS FM 96.1", location: "Thomaston ME, United States", genre: "Rock", stream: "https://fm96wtcs.out.airtime.pro/fm96wtcs_a" }, 
+        
+        //rádios do Brasil
+        { country: "🇧🇷", name: "Antena 1", location: "São Paulo, BR", genre: "Pop / Hits", stream: "https://antena1.com.br/stream" },
         
         //rádios Francesas        
         { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", "stream": "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3" },  
