@@ -22,6 +22,7 @@
          { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream", website: "" },
         
         //rádios da Itália
+         { country: "IT", name: "Romantica", location: "Salerno, IT", genre: "Romanticas", cover:"IT", stream: "https://onair18.xdevel.com/proxy/romantica_ice?mp=/romantica", website: "https://romanticaradio.it" },
          { country: "IT", name: "Divina", location: "Amalfi, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "https://maurizi1.radioca.st/stream.mp3", website: "https://www.divinafm.it" },
          { country: "IT", name: "Radio 105", location: "Milano, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "http://icecast.unitedradio.it/Radio105.mp3", website: "https://www.105.net/" },     
          { country: "IT", name: "Diffusione", location: "Follonica, IT", genre: "Pop / Hits", cover: "🇮🇹", stream: "https://antares.dribbcast.com/proxy/diffusionefollonica/stream.mp3", website: "https://www.radiodiffusionefollonica.it" },
