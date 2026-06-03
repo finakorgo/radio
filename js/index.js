@@ -1,3 +1,4 @@
+/*Javscript criated by José Aparecido Finamor - Finakorgo@gmail.com*/
 // BASE DE RÁDIOS: todas FUNCIONANDO (substituídas as que estavam offline por americanas de qualidade)
     const stations = [
        // rádios americanas novas (funcionando) substituindo as quebradas:
