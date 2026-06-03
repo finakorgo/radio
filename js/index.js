@@ -17,7 +17,7 @@
         { "country": "FR", "name": "Magic Radio", "location": "Paris, França", "genre": "Pop, Rock, Soul (80s, 90s, 2000s)", stream: "https://magicradio.ice.infomaniak.ch/magicradio-high.mp3", website: "https://www.magic.co.uk/" },  
         
         // rádios da Espanha
-         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream", website: "" },
+         { "country": "ES", "name": "Radio Morata", "location": "Madrid, Espanha", "genre": "variadas", "stream": "https://cervera.eldialdigital.com:25141/stream", website:"https://www.radiomorata.com" },
          { "country": "ES", "name": "Radio Enlace", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:25121/stream", website: "" },
          { "country": "ES", "name": "Onda 4 Ronda", "location": "Madrid, Espanha", "genre": "Pop (80s, 90s, 2000s)", "stream": "https://cervera.eldialdigital.com:23161/stream", website: "" },
         
