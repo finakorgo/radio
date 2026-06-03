@@ -2,7 +2,7 @@
 // BASE DE RÁDIOS: todas FUNCIONANDO (substituídas as que estavam offline por americanas de qualidade)
     const stations = [
        // rádios americanas novas (funcionando) substituindo as quebradas:
-        { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtempo", stream: "https://ice2.somafm.com/groovesalad-128-mp3", website: "https://somafm.com/groovesalad/" },
+        { country: "🥗", name: "SomaFM Groove Salad", location: "San Francisco, USA", genre: "Ambient / Downtime", stream: "https://ice2.somafm.com/groovesalad-128-mp3", website: "https://somafm.com/groovesalad/" },
         { country: "📻", name: "WFMU Freeform", location: "Jersey City, USA", genre: "Eclectic", stream: "https://stream0.wfmu.org/freeform-128k", website: "https://wfmu.org/" },        
         { country: "US", name: "KEXP 90.3", location: "Seattle, USA", genre: "Alternative / Indie", stream: "https://kexp.streamguys1.com/kexp128.mp3", website: "https://www.kexp.org/" },
         { country: "US", name: "Power 97.7 Kpow FM", location: "Lamonte, USA", genre: "Rock / Pop", stream: "http://stream.radiojar.com/zwtcz3bkxy8uv", website: "" },
